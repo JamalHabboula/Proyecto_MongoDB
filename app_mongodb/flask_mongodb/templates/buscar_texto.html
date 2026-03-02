@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar en Reseñas | Yelp Flask</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Buscar Palabra en Reseñas</h1>
+    </header>
+    <div class="container">
+        <nav>
+            <a href="/">Inicio</a>
+        </nav>
+        <section>
+            <form method="POST">
+                <label for="palabra">Palabra a buscar:</label>
+                <input type="text" id="palabra" name="palabra" placeholder="Introduce una palabra" required value="{{ palabra }}">
+                <input type="submit" value="Buscar">
+            </form>
+            {% if resultados %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Estrellas</th>
+                            <th>Texto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for resena in resultados %}
+                        <tr>
+                            <td>{{ resena.stars }}</td>
+                            <td>{{ resena.text }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% elif palabra %}
+                <div class="alert">No se encontraron resultados para "{{ palabra }}".</div>
+            {% endif %}
+        </section>
+    </div>
+    <footer>
+        <p>&copy; {{ 2024 }} Yelp Flask. Proyecto educativo.</p>
+    </footer>
+</body>
+</html>

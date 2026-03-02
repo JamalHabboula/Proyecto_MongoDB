@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseñas Destacadas | Yelp Flask</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Reseñas Destacadas y sus Autores</h1>
+    </header>
+    <div class="container">
+        <nav>
+            <a href="/">Inicio</a>
+        </nav>
+        <section>
+            {% if resenas %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Autor</th>
+                            <th>Desde</th>
+                            <th>Estrellas</th>
+                            <th>Fecha</th>
+                            <th>Texto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for resena in resenas %}
+                        <tr>
+                            <td>{{ resena.user_info.name }}</td>
+                            <td>{{ resena.user_info.yelping_since }}</td>
+                            <td>{{ resena.stars }}</td>
+                            <td>{{ resena.date }}</td>
+                            <td>{{ resena.text }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="alert">No se encontraron reseñas destacadas.</div>
+            {% endif %}
+        </section>
+    </div>
+    <footer>
+        <p>&copy; {{ 2024 }} Yelp Flask. Proyecto educativo.</p>
+    </footer>
+</body>
+</html>

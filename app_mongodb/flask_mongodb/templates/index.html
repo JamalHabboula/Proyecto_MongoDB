@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Yelp Flask</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Yelp Flask</h1>
+    </header>
+    <div class="container">
+        <!-- Navegación principal -->
+        <nav>
+            <a href="/top_negocios">Top Negocios</a> |
+            <a href="/amigos_usuario">Buscar Amigos de Usuario</a> |
+            <a href="/resenas_autor">Reseñas Destacadas</a> |
+            <a href="/buscar_texto">Buscar en Reseñas</a>
+        </nav>
+        <section>
+            <h2>¿Qué deseas hacer?</h2>
+            <ul>
+                <li>Ver los <a href="/top_negocios">negocios más populares</a> según las reseñas.</li>
+                <li>Buscar los <a href="/amigos_usuario">amigos de un usuario</a> por su ID.</li>
+                <li>Explorar <a href="/resenas_autor">reseñas destacadas</a> y sus autores.</li>
+                <li>Realizar una <a href="/buscar_texto">búsqueda de texto</a> en las reseñas.</li>
+            </ul>
+        </section>
+    </div>
+    <footer>
+        <p>&copy;Yelp Flask</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,3 @@
+cd "C:\Users\jamal\OneDrive\Escritorio\Proyecto_MongoDB\app_mongodb\flask_mongodb"
+
+python app.py

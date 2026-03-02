@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigos de Usuario | Yelp Flask</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Buscar Amigos de un Usuario</h1>
+    </header>
+    <div class="container">
+        <nav>
+            <a href="/">Inicio</a>
+        </nav>
+        <section>
+            <form method="POST">
+                <label for="user_id">ID de Usuario:</label>
+                <input type="text" id="user_id" name="user_id" placeholder="Introduce el ID de usuario" required>
+                <input type="submit" value="Buscar">
+            </form>
+            {% if nombre %}
+                <h2>Amigos de {{ nombre }}</h2>
+                {% if amigos %}
+                    <ul>
+                        {% for amigo in amigos %}
+                        <li>{{ amigo }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <div class="alert">Este usuario no tiene amigos registrados.</div>
+                {% endif %}
+            {% elif nombre is not none %}
+                <div class="alert">Usuario no encontrado.</div>
+            {% endif %}
+        </section>
+    </div>
+    <footer>
+        <p>&copy; {{ 2024 }} Yelp Flask. Proyecto educativo.</p>
+    </footer>
+</body>
+</html>

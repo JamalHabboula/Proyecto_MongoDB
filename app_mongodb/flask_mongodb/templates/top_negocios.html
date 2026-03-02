@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Negocios | Yelp Flask</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Top 5 Negocios con Más Reseñas</h1>
+    </header>
+    <div class="container">
+        <nav>
+            <a href="/">Inicio</a>
+        </nav>
+        <section>
+            {% if negocios %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID del Negocio</th>
+                            <th>Total de Reseñas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for negocio in negocios %}
+                        <tr>
+                            <td>{{ negocio._id }}</td>
+                            <td>{{ negocio.totalReviews }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="alert">No se encontraron negocios.</div>
+            {% endif %}
+        </section>
+    </div>
+    <footer>
+        <p>&copy; {{ 2024 }} Yelp Flask. Proyecto educativo.</p>
+    </footer>
+</body>
+</html>

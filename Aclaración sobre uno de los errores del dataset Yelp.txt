@@ -1,0 +1,11 @@
+Hola a todos,
+
+quiero hacer una apreciación sobre uno de los errores que tiene el dataset Yelp. En concreto, el referente al campo "attributes" de la colección "business". En el enunciado he puesto que el error está en el propio campo "attributes" aunque, en realidad, los errores se encuentran en algunos de los campos embebidos que están dentro del campo "attributes".
+
+He detectado errores en los campos "BusinessParking", "GoodForMeal", "Ambience" y "Music". No sé si vosotros habéis detectado algunos más. Esos campos deberían ser documentos embebidos pero están almacenados como cadenas (string).
+
+Por tanto, esos serían los errores que tendríais que corregir.
+
+Para cualquier cuestión relacionada, por favor, usad este hilo.
+
+Un saludo

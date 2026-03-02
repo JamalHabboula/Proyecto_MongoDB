@@ -1,0 +1,6 @@
+- Dos consultas sobre el campo text de la colección 'review.json'.
+- Dos consultas usando el 'Framework Aggregation'.
+- De las tres de las consultas propuestas debe coger 3 de consultas obligatorias.
+- La parte gráfica a base de consultas anteriores.
+
+
